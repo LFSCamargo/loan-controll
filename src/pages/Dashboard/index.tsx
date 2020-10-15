@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 
-import total from '../../assets/total.svg';
-
 import Header from '../../components/Header';
+import Card from '../../components/Card';
 
-import { Container, CardContainer, Card, TableContainer } from './styles';
+import { Container, CardContainer, TableContainer } from './styles';
 
 interface Balance {
   payd: boolean;
@@ -45,34 +44,13 @@ const Dashboard: React.FC = () => {
       <Header />
       <Container>
         <CardContainer>
-          <Card>
-            <header>
-              <p>Montante total emprestado</p>
-              <img src={total} alt="total" />
-            </header>
-            <h1>R$00,00</h1>
-          </Card>
-          <Card>
-            <header>
-              <p>Valor total dos juros</p>
-              <img src={total} alt="total" />
-            </header>
-            <h1>R$00,00</h1>
-          </Card>
-          <Card>
-            <header>
-              <p>Taxa de juros mensais</p>
-              <img src={total} alt="total" />
-            </header>
-            <h1>R$00,00</h1>
-          </Card>
-          <Card total>
-            <header>
-              <p>Valor total pago</p>
-              <img src={total} alt="Outcome" />
-            </header>
-            <h1>R$00,00</h1>
-          </Card>
+          <Card title="Montante total emprestado" value="R$00,00" />
+
+          <Card title="Valor total dos juros" value="R$00,00" />
+
+          <Card title="Taxa de juros mensais" value="R$00,00" />
+
+          <Card title="Valor total pago" value="R$00,00" total />
         </CardContainer>
 
         <TableContainer>
