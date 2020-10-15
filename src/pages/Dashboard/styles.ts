@@ -71,15 +71,15 @@ export const TableContainer = styled.section`
       font-weight: normal;
       color: #969cb3;
 
-      &.title {
+      &.value {
         color: #363f5f;
       }
 
-      &.income {
+      &.paid {
         color: #12a454;
       }
 
-      &.outcome {
+      &.notpaid {
         color: #e83f5b;
       }
     }

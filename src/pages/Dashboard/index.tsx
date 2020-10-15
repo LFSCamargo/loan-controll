@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import total from '../../assets/total.svg';
 
@@ -6,32 +6,22 @@ import Header from '../../components/Header';
 
 import { Container, CardContainer, Card, TableContainer } from './styles';
 
-interface Transaction {
-  id: string;
-  title: string;
-  value: number;
-  formattedValue: string;
-  formattedDate: string;
-  type: 'total' | 'outcome';
-  category: { title: string };
-  created_at: Date;
+interface Balance {
+  payd: boolean;
 }
 
-interface Balance {}
-
 const Dashboard: React.FC = () => {
-  const [transactions, setTransactions] = useState<Transaction[]>([]);
-  const [balance, setBalance] = useState<Balance>({} as Balance);
+  const [balances, setbalances] = useState<Balance[]>([]);
 
   // useEffect(() => {
-  //   async function loadTransactions(): Promise<void> {
-  //     const response = await api.get('transactions');
+  //   async function loadbalances(): Promise<void> {
+  //     const response = await api.get('balances');
 
-  //     const transactionsFormatted = response.data.transactions.map(
-  //       (transaction: Transaction) => ({
-  //         ...transaction,
-  //         value: formatValue(transaction.value),
-  //         created_at: new Date(transaction.created_at).toLocaleDateString(
+  //     const balancesFormatted = response.data.balances.map(
+  //       (balance: balance) => ({
+  //         ...balance,
+  //         value: formatValue(balance.value),
+  //         created_at: new Date(balance.created_at).toLocaleDateString(
   //           'pt-br',
   //         ),
   //       }),
@@ -43,11 +33,11 @@ const Dashboard: React.FC = () => {
   //       total: formatValue(response.data.balance.total),
   //     };
 
-  //     setTransactions(transactionsFormatted);
+  //     setbalances(balancesFormatted);
   //     setBalance(balanceFormatted);
   //   }
 
-  //   loadTransactions();
+  //   loadbalances();
   // }, []);
 
   return (
@@ -96,22 +86,11 @@ const Dashboard: React.FC = () => {
             </thead>
 
             <tbody>
-              {transactions.map(transaction => (
-                <tr key={transaction.id}>
-                  <td className="title">{transaction.title}</td>
-                  <td
-                    className={
-                      transaction.type === 'total' ? 'total' : 'outcome'
-                    }
-                  >
-                    {transaction.type === 'total'
-                      ? transaction.value
-                      : `- ${transaction.value}`}
-                  </td>
-                  <td>
-                    {transaction.category ? transaction.category.title : `-`}
-                  </td>
-                  <td>{transaction.created_at}</td>
+              {balances.map((balance, index) => (
+                <tr key={index}>
+                  <td className="value">R$ 00,00</td>
+                  <td className={balance.payd ? 'paid' : 'notpaid'}>SIM</td>
+                  <td>DATA</td>
                 </tr>
               ))}
             </tbody>
