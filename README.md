@@ -38,7 +38,7 @@ The project was developed using the following technologies
 - [TypeScript](https://www.typescriptlang.org/)
 - [React](https://pt-br.reactjs.org/)
 - [Styled Components](https://styled-components.com/)
-- [Context Api](https://reactjs.org/docs/hooks-reference.html)
+- [Context API](https://reactjs.org/docs/hooks-reference.html)
 
 ## :fire: How to run
 
