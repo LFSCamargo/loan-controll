@@ -54,13 +54,15 @@ const Dashboard: React.FC = () => {
               </thead>
 
               <tbody>
-                {/* {loans.map((balance, index) => (
-                <tr key={index}>
-                <td className="value">R$ 00,00</td>
-                <td className={balance.payd ? 'paid' : 'notpaid'}>SIM</td>
-                <td>DATA</td>
-                </tr>
-              ))} */}
+                {balance.installments.map((item, index) => (
+                  <tr key={index}>
+                    <td className="value">{item.formatedValue}</td>
+                    <td className={item.payd ? 'paid' : 'notpaid'}>
+                      {item.payd ? 'Sim' : 'Não'}
+                    </td>
+                    <td>{item.dueDate}</td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </TableContainer>
