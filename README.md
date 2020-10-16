@@ -1,5 +1,5 @@
 <h3 align="center">
-    <img alt="Loan Controll width="560" title="#logo" src="./github_assets/banner.png">
+    <img alt="Loan Controll width="480" title="#logo" src="./github_assets/banner.png">
     <br>
 </h3>
 <p align="center"> 🚀 <strong>Loan Controll</strong>
